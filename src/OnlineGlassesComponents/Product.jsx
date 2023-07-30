@@ -11,6 +11,7 @@ const Product = () => {
         }
         return response.json();
       })
+      //fetch thành công cập nhật vào state
       .then(data => {
         setDataGlasses(data);
         // mặc định load data thứ 1
@@ -18,7 +19,7 @@ const Product = () => {
       })
       .catch(error => console.error(error));
   }, []);
-
+  // cập nhật state của sản phẩm khi click chuột
   const handleProductClick = (product) => {
     setSelectedProduct(product);
   }
@@ -27,7 +28,7 @@ const Product = () => {
     <div className='product-zone container d-flex justify-content-center flex-wrap mt-5'>
       <div className="product-model d-flex justify-content-between">
         <div className="product-model-img">
-          <img src='glassesImage/model.jpg' alt="đeo kính" />
+          <img src='glassesImage/model.jpg'/>
           {selectedProduct && <img src={selectedProduct.url} id="product-wear" />}
           <div className="product-info p-1">
             {selectedProduct && (
@@ -39,7 +40,7 @@ const Product = () => {
           </div>
         </div>
         <div className="product-model-img">
-          <img src='glassesImage/model.jpg' alt="đeo kính" />
+          <img src='glassesImage/model.jpg'/>
         </div>
       </div>
       <div className="product-show d-flex flex-wrap align-items-center justify-content-center">
